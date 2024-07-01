@@ -1,4 +1,4 @@
-Night City Drive: Finn's Journey
+Night City Drive: Finn's Journey is a game
 
 Embark on an exhilarating nighttime adventure with Finn as you control his blue car. In this fast-paced game, maneuver Finn's car using the arrow keys to dodge traffic and score points.
 
