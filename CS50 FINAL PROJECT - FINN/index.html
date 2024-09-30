@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS50 FINN'S POMODORO</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400&display=swap" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <!-- header -->
+    <div class="header">
+        <div class="settings" onclick="openPopup()"><i class="fas fa-image"></i></div>
+        <div class="controls">
+            <div class="music" onclick="openMusicPopup()"><i class="fas fa-music"></i></div>
+            <div class="todolist" onclick="openTodoList()"><i class="fas fa-list"></i></div>
+        </div>
+    </div>
+    <!-- modes -->
+    <div class="modes">
+        <a class="mode" href="#" data-time="1500">Pomodoro</a>
+        <a class="mode" href="#" data-time="300">Short Break</a>
+        <a class="mode" href="#" data-time="900">Long Break</a>
+    </div>
+    <div class="get-started"></div>
+
+    <!-- 00:00 -->
+    <main>
+        <div class="pomodoro">
+            <div class="pomodoro__time-container">
+                <h1 class="pomodoro__time">00:00</h1>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="message">
+                <textarea id="userInput" placeholder="What are you aiming for? Write down your dreams here"></textarea>
+            </div>
+        </div>
+
+        <!-- Change Background -->
+        <div class="overlay" id="overlay" onclick="closePopup()"></div>
+        <div class="popup" id="popup">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h3>Change Background</h3>
+            <input type="text" id="bgImageInput" placeholder="Copy image address then paste here">
+            <button onclick="changeBackground()">Change</button>
+        </div>
+
+        <!-- Music -->
+        <div class="popup" id="musicPopup">
+            <span class="close-btn" onclick="closeMusicPopup()">&times;</span>
+            <h3>Choose a Music</h3>
+            <input type="text" id="youtubeLink" class="input-link" placeholder="Paste YouTube link here">
+            <button onclick="addCustomMusic()">Add Music</button>
+            <ul class="music-list">
+                <li><button onclick="playAudio('Jvgx5HHJ0qw')">Rain</button></li>
+                <li><button onclick="playAudio('U49lwYAJEdk')">Rain Lofi</button></li>
+                <li><button onclick="playAudio('bszauXTqlRM')">Alpha Hz</button></li>
+                <li><button onclick="playAudio('ctL1r742ETI')">Mario</button></li>
+                <li><button onclick="stopAudio()">Stop Music</button></li>
+            </ul>
+        </div>
+
+        <!-- To-Do List -->
+        <div class="overlay" id="todoOverlay" onclick="closeTodoList()"></div>
+        <div class="todo-list-box" id="todoListBox">
+            <span class="close-btn" onclick="closeTodoList()">&times;</span>
+            <h3>To-Do List</h3>
+            <input type="text" id="todoInput" placeholder="Add a new task">
+            <button onclick="addTodo()">Add</button>
+            <ul id="todoList"></ul>
+        </div>
+        <div id="player"></div>
+
+        <script src="scripts.js"></script>
+        <script src="https://www.youtube.com/iframe_api"></script> <!-- API YouTube -->
+    </main>
+</body>
+</html>
